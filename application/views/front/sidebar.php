@@ -13,26 +13,21 @@
 
     <div class="form-group">
       <label>Categoría</label>
-      <?php 
-                  echo $nombre;?>
-      
       
       <select class="form-control">
+      <option>SELECCIONE UNA CATEGORÍA</option>
             <?php 
-    for($i=0; $i<$id_categoria; $i++)
-    {
-        
-    ?>
-        <option value="<?php echo $id_categoria ?>"><?php echo $nombre ?></option>
+    for ($i = 1; $i <= count($categoria); $i++)
+          {
+          if( array_key_exists($i, $categoria)){
+     ?>
+              
+              <option value="<?php echo $i ?>"><?php echo $categoria[$i] ?></option>
     <?php
-    }
+                }
+           }
     ?>
         
-     <option>Accesorio</option>
-        <option>Mascota</option>
-        <option>Restaurante</option>
-        <option>Automotriz</option>
-        <option>Vestuario</option>
       </select>
     </div>
 

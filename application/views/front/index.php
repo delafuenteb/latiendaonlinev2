@@ -22,7 +22,9 @@
     <!-- LEFT -->
     <div id="columna-left" class="col-xs-12 col-sm-3">
         
-      <?php include("sidebar.php"); ?>
+      <?php 
+            
+      include("sidebar.php"); ?>
     </div><!--/#columna-left-->
 
     <!-- RIGTH -->

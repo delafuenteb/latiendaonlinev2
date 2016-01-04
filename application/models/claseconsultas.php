@@ -19,18 +19,33 @@ class claseconsultas extends CI_Model{
             
     }
    function obtener_categorias(){
+    $sql = "SELECT id_categoria, nombre FROM categorias";
+    $query = $this->db->query($sql);
+    $data = array(); 
+    if ($query->num_rows() > 0) {
+    foreach ($query->result_array() as $row) {
+    $data[$row['id_categoria']] = strtoupper($row['nombre']); 
+    }
+    return $data;
+   
+    }
+   // return $data;
 
-     $query = $this->db-> query('SELECT id_categoria, nombre FROM categorias');
+}
+   function obtener_usuario(){
+
+     $query = $this->db-> query('SELECT nombre, password FROM usuarios');
     if ($query->num_rows() > 0) {
        foreach ($query->result_array() as $row )
        {
-           $datos_obtenidos = array(
+           $datos_usuario = array(
            'nombre' => $row['nombre'],
-           'id_categoria' => $row['id_categoria'],
+           'password' => $row['password'],
                );
         }
-       
-        return $datos_obtenidos;
+        
+
+     return $datos_usuario;
            
      }
 }

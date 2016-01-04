@@ -10,8 +10,8 @@ class Welcome extends CI_Controller {
     
 	public function index()
 	{
-          $datos_obtenidos=$this->claseconsultas->obtener_categorias();       
-          $this->load->view('front/index',$datos_obtenidos);  
+          $data['categoria']=$this->claseconsultas->obtener_categorias();   
+          $this->load->view('front/index',$data);  
                      
 	}
         
