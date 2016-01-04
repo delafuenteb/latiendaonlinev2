@@ -13,6 +13,7 @@ class Welcome extends CI_Controller {
           $data['categoria']=$this->claseconsultas->obtener_categorias();
           $data['regiones']=$this->claseconsultas->obtener_regiones();
           $data['ciudades']=$this->claseconsultas->obtener_ciudades();
+          $data['top_categorias']=$this->claseconsultas->obtener_top_categorias();
           $this->load->view('front/index',$data);  
                      
 	}

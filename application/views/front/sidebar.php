@@ -54,12 +54,12 @@
       <select class="form-control">
          <option>SELECCIONE UNA CIUDAD</option>
             <?php 
-    for ($i = 1; $i <= count($ciudades); $i++)
+    for ($i = 1; $i <= count($categoria); $i++)
           {
-          if( array_key_exists($i, $ciudades)){
+          if( array_key_exists($i, $categoria)){
      ?>
               
-              <option value="<?php echo $i ?>"><?php echo $ciudades[$i] ?></option>
+              <option value="<?php echo $i ?>"><?php echo $categoria[$i] ?></option>
     <?php
                 }
            }
@@ -76,16 +76,15 @@
 
   <div id="menu-categoria">
     <ul class="fa-ul">
-      <li><i class="fa-li fa fa-user"></i>Categoría</li>
-      <li><i class="fa-li fa fa-home"></i>Categoría</li>
-      <li><i class="fa-li fa fa-dashboard"></i>Categoría</li>
-      <li><i class="fa-li fa fa-pencil"></i>Categoría</li>
-      <li><i class="fa-li fa fa-facebook"></i>Categoría</li>
-      <li><i class="fa-li fa fa-twitter"></i>Categoría</li>
-      <li><i class="fa-li fa fa-dashboard"></i>Categoría</li>
-      <li><i class="fa-li fa fa-pencil"></i>Categoría</li>
-      <li><i class="fa-li fa fa-facebook"></i>Categoría</li>
-      <li><i class="fa-li fa fa-twitter"></i>Categoría</li>
+        <?php foreach ($top_categorias as $key => $nombre_cat) 
+             {
+            ?>
+              
+              <li><i class="fa-li fa fa-user"></i><?php echo $nombre_cat['nombre'] ?></li>
+    <?php
+            
+           }
+?>
     </ul>
   </div>
 
