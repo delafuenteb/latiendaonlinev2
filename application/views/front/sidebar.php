@@ -34,22 +34,36 @@
     <div class="form-group">
       <label>Región</label>
       <select class="form-control">
-        <option>VII Maule</option>
-        <option>VIII Bio Bio</option>
-        <option>IX Ohiggins</option>
-        <option>X Araucanía</option>
-        <option>XX Los Lagos</option>
+           <option>SELECCIONE UNA REGIÓN</option>
+            <?php 
+    for ($i = 1; $i <= count($regiones); $i++)
+          {
+          if( array_key_exists($i, $regiones)){
+     ?>
+              
+              <option value="<?php echo $i ?>"><?php echo $regiones[$i] ?></option>
+    <?php
+                }
+           }
+    ?>
       </select>
     </div>
 
     <div class="form-group">
       <label>Ciudad</label>
       <select class="form-control">
-        <option>Talca</option>
-        <option>Paris</option>
-        <option>Londres</option>
-        <option>Curico</option>
-        <option>Chillan</option>
+         <option>SELECCIONE UNA CIUDAD</option>
+            <?php 
+    for ($i = 1; $i <= count($ciudades); $i++)
+          {
+          if( array_key_exists($i, $ciudades)){
+     ?>
+              
+              <option value="<?php echo $i ?>"><?php echo $ciudades[$i] ?></option>
+    <?php
+                }
+           }
+    ?>
       </select>
     </div>
 

@@ -7,15 +7,18 @@ class claseconsultas extends CI_Model{
         parent::_construct();
     }
     
-    public function seleccionar_datos()
+    public function obtener_ciudades()
     {
-       $query= $this->db->query("Select * from Categorias");
-        foreach ($query->result_array() as $row)
-            {
-               echo $row['nombre'];
-               
-            }
-            
+        $sql = "SELECT id_ciudad, nombre FROM ciudades";
+        $query = $this->db->query($sql);
+        $data = array(); 
+        if ($query->num_rows() > 0) {
+        foreach ($query->result_array() as $row) {
+        $data[$row['id_ciudad']] = strtoupper($row['nombre']); 
+        }
+        return $data;
+           
+     }
             
     }
    function obtener_categorias(){
@@ -46,6 +49,19 @@ class claseconsultas extends CI_Model{
         
 
      return $datos_usuario;
+           
+     }
+}
+function obtener_regiones(){
+
+    $sql = "SELECT id_region, nombre FROM regiones";
+    $query = $this->db->query($sql);
+    $data = array(); 
+    if ($query->num_rows() > 0) {
+    foreach ($query->result_array() as $row) {
+    $data[$row['id_region']] = strtoupper($row['nombre']); 
+    }
+    return $data;
            
      }
 }
