@@ -4,7 +4,7 @@
     <h4>BUSCAR TIENDAS</h4>
   </div>
 
-    <form action="application/controllers/tiendas.php" method="post">
+    <form action="" method="post">
 
     <div class="form-group">
       <label>Palabra Clave</label>
@@ -95,6 +95,6 @@
     <h4>PUBLICIDAD</h4>
   </div>
 
-  <img class="img-responsive" src="holder.js/300x300/auto" alt="">
+  <img class="img-responsive" src="<?php echo base_url()?>views/front/js/holder.js/300x300/auto" alt="">
 
 </section>
