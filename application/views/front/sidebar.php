@@ -4,7 +4,7 @@
     <h4>BUSCAR TIENDAS</h4>
   </div>
 
-  <form action="">
+    <form action="application/controllers/tiendas.php" method="post">
 
     <div class="form-group">
       <label>Palabra Clave</label>
@@ -33,7 +33,7 @@
 
     <div class="form-group">
       <label>Región</label>
-      <select class="form-control">
+      <select class="form-control" name="region">
            <option>SELECCIONE UNA REGIÓN</option>
             <?php 
     for ($i = 1; $i <= count($regiones); $i++)
@@ -51,7 +51,7 @@
 
     <div class="form-group">
       <label>Ciudad</label>
-      <select class="form-control">
+      <select class="form-control" name="ciudad">
          <option>SELECCIONE UNA CIUDAD</option>
             <?php 
     for ($i = 1; $i <= count($categoria); $i++)
@@ -67,7 +67,7 @@
       </select>
     </div>
 
-    <button class="btn btn-default center-block" type="submit"><i class="fa fa-search"></i> Buscar</button>
+        <button onclick="buscar_tiendas()" class="btn btn-default center-block" type="submit"><i class="fa fa-search"></i> Buscar</button>
   </form>
 
   <div class="separador1">
@@ -78,13 +78,16 @@
     <ul class="fa-ul">
         <?php foreach ($top_categorias as $key => $nombre_cat) 
              {
+           
             ?>
               
               <li><i class="fa-li fa fa-user"></i><?php echo $nombre_cat['nombre'] ?></li>
     <?php
             
-           }
-?>
+           
+           
+             }
+?> 
     </ul>
   </div>
 

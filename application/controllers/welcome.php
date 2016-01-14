@@ -18,11 +18,7 @@ class Welcome extends CI_Controller {
                      
 	}
         
-        public function  obtener_datos_modelo()
-        {
-            
-         
-        }
+       
 }
 
 /* End of file welcome.php */

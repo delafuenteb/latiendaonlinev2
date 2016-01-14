@@ -6,6 +6,7 @@ class claseconsultas extends CI_Model{
     {
         parent::_construct();
     }
+   
     
     public function obtener_ciudades()
     {
